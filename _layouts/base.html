@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  {% include header.html %}
+</head>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<body>
+  <div class="container">
+    <div class="row">
+      {% include navside.html %}
+      <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12 aside3">
+        <div id="container">
+          <div id="pjax">
+            {{ content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include footer.html %}
+  {% include googleanalytics.html %}
+</body>
+</html>

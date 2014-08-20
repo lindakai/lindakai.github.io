@@ -1,0 +1,44 @@
+﻿permalink: /:year/:month/:day/:title.html
+paginate: 10
+markdown: redcarpet
+
+# 作者信息
+author: 
+  name: 林大凯
+  email: sjtuldk@gmail.com
+  link: http://sjtuldk.tk
+  weibo: http://weibo.com/u/1263334125
+  github: http://github.com/lindakai
+
+# 站点信息
+title: 林大凯的博客 
+description: A ease place
+url: http://sjtuldk.tk
+rss_url: /pages/atom.xml
+
+# gavatar头像及Favicon
+gavatar: /public/upload/gavatar/gavatar.png
+favicon: /public/upload/gavatar/favicon.ico
+
+# google analytics 设置
+ga:
+  id: UA-43667383-1
+  url: yansu.org
+
+# disqus 设置
+disqus:
+  shortname: suyan-zh
+
+# 主题设置，自动激活某个标签
+active: 技术
+
+# 首页除了最新文章外显示分类
+cates: 
+  - CV-QKD
+  - LDPC
+
+# 中文本地化
+locals:
+  tags: 标签
+  about: 关于
+  newest: 最新文章
