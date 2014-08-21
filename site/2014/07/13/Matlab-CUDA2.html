@@ -1,0 +1,368 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+<title>Matlab中的CUDA环境配置小记 | 林大凯的博客</title>
+<meta name="author" content="林大凯">
+
+
+<link rel="shortcut icon" href="/public/upload/gavatar/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/public/css/bootstrap.css">
+<link rel="stylesheet" href="/public/css/font-awesome.css">
+<link rel="stylesheet" href="/public/js/prettify/prettify.css">
+<link rel="stylesheet" href="/public/css/base.css">
+<link href="/pages/atom.xml" rel="alternate" title="林大凯的博客" type="application/atom+xml">
+</head>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 aside visible-md visible-lg">
+  <div class="row">
+    <div class="col-md-3 col-xs-3 aside1">
+      <br>
+      <a class="pjaxlink" href="/"><img src="/public/upload/gavatar/gavatar.png" class="img-rounded avatar"></a>
+      <br><br>
+      <ul class="nav nav-pills nav-stacked">
+        
+          <li><a href="#读书" data-toggle="tab">读书</a></li>
+        
+          <li><a href="#技术" data-toggle="tab">技术</a></li>
+        
+          <li><a href="#生活" data-toggle="tab">生活</a></li>
+        
+        <li><a href="#tags" data-toggle="tab">标签</a></li>
+        <li><a class="pjaxlink" href="/pages/about.html">关于</a></li>
+      </ul>
+      <div class="aside1_bottom">
+        <table class="table table-condensed">
+          <tr>
+            <td><a href="/pages/atom.xml" target="_blank"><i class="fa fa-rss fa-2x"></i></a></td>
+            <td><a href="mailto:sjtuldk@gmail.com"><i class="fa fa-envelope-o fa-2x"></i></a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-9 col-xs-9 aside2">
+      <div class="row">
+        <div class="tab-content">
+           
+            <div class="tab-pane" id="读书">
+              <div class="list-group">
+                <h2 class="center">读书</h2>
+                
+                  <a href="/2014/03/14/book-list-of-2014.html" class="list-group-item pjaxlink">2014阅读书单</a>
+                
+                  <a href="/2013/12/20/book-list-of-2013.html" class="list-group-item pjaxlink">2013阅读书单</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="技术">
+              <div class="list-group">
+                <h2 class="center">技术</h2>
+                
+                  <a href="/2014/08/18/CUDA-several-functions.html" class="list-group-item pjaxlink">CUDA C 中的几个常用函数</a>
+                
+                  <a href="/2014/07/21/Large-signal-parameters.html" class="list-group-item pjaxlink">大信号放大--运放的关键参数</a>
+                
+                  <a href="/2014/07/21/Large-signal-parameters.html" class="list-group-item pjaxlink">大信号放大--运放的关键参数</a>
+                
+                  <a href="/2014/07/18/Load-sharing.html" class="list-group-item pjaxlink">CV-QKD的安全距离</a>
+                
+                  <a href="/2014/07/18/Layered-LDPC.html" class="list-group-item pjaxlink">分层LDPC译码算法</a>
+                
+                  <a href="/2014/07/13/Matlab-speedup.html" class="list-group-item pjaxlink">通用Matlab加速方法</a>
+                
+                  <a href="/2014/07/13/Matlab-CUDA2.html" class="list-group-item pjaxlink">Matlab中的CUDA环境配置小记</a>
+                
+                  <a href="/2014/07/12/CVQKD.html" class="list-group-item pjaxlink">CV-QKD的安全距离</a>
+                
+                  <a href="/2014/07/12/CV-QKD-Distance.html" class="list-group-item pjaxlink">CV-QKD的安全距离</a>
+                
+                  <a href="/2014/06/19/LDPC-Beta.html" class="list-group-item pjaxlink">关于LDPC码和量子协商效率</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="生活">
+              <div class="list-group">
+                <h2 class="center">生活</h2>
+                
+                  <a href="/2014/06/19/dandelion.html" class="list-group-item pjaxlink">错误设计的蒲公英</a>
+                
+              </div>
+            </div>
+          
+          <div class="tab-pane" id="tags">
+            <div class="panel-group" id="accordion">
+              <h2 class="center">标签</h2>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#LDPC">LDPC</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="LDPC" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/07/18/Layered-LDPC.html' class="list-group-item pjaxlink">
+                        分层LDPC译码算法
+                      </a>
+                    
+                      <a  href='/2014/06/19/LDPC-Beta.html' class="list-group-item pjaxlink">
+                        关于LDPC码和量子协商效率
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#CV-QKD">CV-QKD</a>
+                      <span class="badge pull-right">4</span>
+                    </h4>
+                  </div>
+                  <div id="CV-QKD" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/07/18/Load-sharing.html' class="list-group-item pjaxlink">
+                        CV-QKD的安全距离
+                      </a>
+                    
+                      <a  href='/2014/07/12/CVQKD.html' class="list-group-item pjaxlink">
+                        CV-QKD的安全距离
+                      </a>
+                    
+                      <a  href='/2014/07/12/CV-QKD-Distance.html' class="list-group-item pjaxlink">
+                        CV-QKD的安全距离
+                      </a>
+                    
+                      <a  href='/2014/06/19/LDPC-Beta.html' class="list-group-item pjaxlink">
+                        关于LDPC码和量子协商效率
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Life">Life</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Life" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/06/19/dandelion.html' class="list-group-item pjaxlink">
+                        错误设计的蒲公英
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Matlab">Matlab</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="Matlab" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/07/13/Matlab-speedup.html' class="list-group-item pjaxlink">
+                        通用Matlab加速方法
+                      </a>
+                    
+                      <a  href='/2014/07/13/Matlab-CUDA2.html' class="list-group-item pjaxlink">
+                        Matlab中的CUDA环境配置小记
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#CUDA">CUDA</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="CUDA" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/08/18/CUDA-several-functions.html' class="list-group-item pjaxlink">
+                        CUDA C 中的几个常用函数
+                      </a>
+                    
+                      <a  href='/2014/07/13/Matlab-CUDA2.html' class="list-group-item pjaxlink">
+                        Matlab中的CUDA环境配置小记
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#OP-Amp">OP-Amp</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="OP-Amp" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/07/21/Large-signal-parameters.html' class="list-group-item pjaxlink">
+                        大信号放大--运放的关键参数
+                      </a>
+                    
+                      <a  href='/2014/07/21/Large-signal-parameters.html' class="list-group-item pjaxlink">
+                        大信号放大--运放的关键参数
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12 aside3">
+        <div id="container">
+          <div id="pjax">
+            <div class="row">
+  <div class="col-md-12 aside3-title">
+    <br>
+    <h2 id="#identifier">Matlab中的CUDA环境配置小记</h2>
+    2014年07月13日
+  </div>
+  <div class="col-md-12 aside3-content">
+    <hr>
+    <div id="content">
+      <blockquote>
+<p>参考书籍《Accelerating MATLAB with GPU Computing》—Chapter 2.4</p>
+</blockquote>
+
+<p>首先根据系统情况下载CUDA安装包并安装。</p>
+
+<p>安装完毕后再Matlab中输入：
+    &gt;&gt; system(&#39;nvcc&#39;);</p>
+
+<p>正常情况下会返回值:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">nvcc : fatal error : No input files specified; use option --help for more information 
+</code></pre></div>
+<p>但这是正常现象，如果返回值为：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">nvcc is not recognized as an 26 Accelerating MATLAB with GPU Computing internal or external command, operable program or batch file
+</code></pre></div>
+<p>则可能是由于CUDA没有正确安装</p>
+
+<p>根据教程，接着在Matlab中新建一个<strong>AddVectors.h</strong>文件：</p>
+<div class="highlight"><pre><code class="language-matlab" data-lang="matlab">#<span class="n">ifndef</span> <span class="n">__ADDVECTORS_H__</span>
+#<span class="n">define</span> <span class="n">__ADDVECTORS_H__</span>
+<span class="n">extern</span> <span class="n">void</span> <span class="n">addVectors</span><span class="p">(</span><span class="n">float</span><span class="o">*</span> <span class="n">A</span><span class="p">,</span> <span class="n">float</span><span class="o">*</span> <span class="n">B</span><span class="p">,</span> <span class="n">float</span><span class="o">*</span> <span class="n">C</span><span class="p">,</span> <span class="n">int</span> <span class="nb">size</span><span class="p">);</span>
+#<span class="n">endif</span> <span class="o">//</span> <span class="n">__ADDVECTORS_H__</span>
+</code></pre></div>
+<p>再建立一个<strong>AddVectors.cu</strong>文件</p>
+<div class="highlight"><pre><code class="language-matlab" data-lang="matlab">#<span class="n">include</span> &quot;<span class="n">AddVectors</span><span class="p">.</span><span class="n">h</span>&quot;
+#<span class="n">include</span> &quot;<span class="n">D</span><span class="p">:</span><span class="o">\</span><span class="n">Program</span> <span class="n">Files</span><span class="o">\</span><span class="n">MATLAB</span><span class="o">\</span><span class="n">R2012b</span><span class="o">\</span><span class="n">extern</span><span class="o">\</span><span class="n">include</span><span class="o">\</span><span class="n">mex</span><span class="p">.</span><span class="n">h</span>&quot;
+
+
+<span class="n">__global__</span> <span class="n">void</span> <span class="n">addVectorsMask</span><span class="p">(</span><span class="n">float</span><span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="n">float</span><span class="o">*</span><span class="n">B</span><span class="p">,</span> <span class="n">float</span><span class="o">*</span><span class="n">C</span><span class="p">,</span> <span class="n">int</span> <span class="nb">size</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">int</span> <span class="nb">i</span><span class="p">=</span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">i</span><span class="o">&gt;</span><span class="p">=</span> <span class="nb">size</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="n">C</span><span class="p">[</span><span class="nb">i</span><span class="p">]</span> <span class="p">=</span> <span class="n">A</span><span class="p">[</span><span class="nb">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">B</span><span class="p">[</span><span class="nb">i</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="n">void</span> <span class="n">addVectors</span><span class="p">(</span><span class="n">float</span><span class="o">*</span> <span class="n">A</span><span class="p">,</span> <span class="n">float</span><span class="o">*</span> <span class="n">B</span><span class="p">,</span> <span class="n">float</span><span class="o">*</span> <span class="n">C</span><span class="p">,</span> <span class="n">int</span> <span class="nb">size</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">float</span> <span class="o">*</span><span class="n">devPtrA</span> <span class="p">=</span> <span class="mi">0</span><span class="p">,</span><span class="o">*</span><span class="n">devPtrB</span> <span class="p">=</span> <span class="mi">0</span><span class="p">,</span><span class="o">*</span><span class="n">devPtrC</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">cudaMalloc</span><span class="p">(</span><span class="o">&amp;</span><span class="n">devPtrA</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">float</span><span class="p">)</span> <span class="o">*</span> <span class="nb">size</span><span class="p">);</span>
+    <span class="n">cudaMalloc</span><span class="p">(</span><span class="o">&amp;</span><span class="n">devPtrA</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">float</span><span class="p">)</span> <span class="o">*</span> <span class="nb">size</span><span class="p">);</span>
+    <span class="n">cudaMalloc</span><span class="p">(</span><span class="o">&amp;</span><span class="n">devPtrA</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">float</span><span class="p">)</span> <span class="o">*</span> <span class="nb">size</span><span class="p">);</span>
+
+    <span class="n">cudaMemcpy</span><span class="p">(</span><span class="n">devPtrA</span><span class="p">,</span><span class="n">A</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">float</span><span class="p">)</span><span class="o">*</span> <span class="nb">size</span><span class="p">,</span> <span class="n">cudaMemcpyHostToDevice</span><span class="p">);</span>
+    <span class="n">cudaMemcpy</span><span class="p">(</span><span class="n">devPtrB</span><span class="p">,</span><span class="n">B</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">float</span><span class="p">)</span><span class="o">*</span> <span class="nb">size</span><span class="p">,</span> <span class="n">cudaMemcpyHostToDevice</span><span class="p">);</span>
+    <span class="n">addVectorsMask</span><span class="o">&lt;&lt;&lt;</span><span class="nb">size</span><span class="p">,</span> <span class="mi">1</span><span class="o">&gt;&gt;&gt;</span><span class="p">(</span><span class="n">devPtrA</span><span class="p">,</span><span class="n">devPtrB</span><span class="p">,</span> <span class="n">devPtrC</span><span class="p">,</span> <span class="nb">size</span><span class="p">);</span>
+    <span class="n">cudaMemcpy</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="n">devPtrC</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">float</span><span class="p">)</span><span class="o">*</span> <span class="nb">size</span><span class="p">,</span> <span class="n">cudaMemcpyDeviceToHost</span><span class="p">);</span>
+
+    <span class="n">cudaFree</span><span class="p">(</span><span class="n">devPtrA</span><span class="p">);</span>
+    <span class="n">cudaFree</span><span class="p">(</span><span class="n">devPtrB</span><span class="p">);</span>
+    <span class="n">cudaFree</span><span class="p">(</span><span class="n">devPtrC</span><span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>根据教程，下一步为执行：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&gt;&gt;system(&#39;nvcc -c AddVectors.cu&#39;)
+</code></pre></div>
+<p>但这时问题就出现了，Matlab可能会提示：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">nvcc : fatal error : Cannot find compiler &#39;cl.exe&#39; in PATH 
+</code></pre></div>
+<p>这是Matlab在现有的路径中并没有找到VS 2010用来编译的cl.exe，本来想试着如何将VS的目录包含进去，但是试过在环境变量PATH中添加VS目录以用及Mex -setup连接VS环境后，错误均未解决，因此采用就书中提及的 <strong>-ccbin</strong> 选项（为了以后编程方便，建议将VS的bin目录和Matlab的\extern\include目录添加到环境变量PATH中）：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&gt;&gt;system(&#39;nvcc -c AddVectors.cu -ccbin &quot;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin&quot;&#39;)
+</code></pre></div>
+<p>于是就可以正确编译生成.obj文件了。
+最开始编译的时候还遇到了无法打开“mex.h”的错误：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">fatal error C1083: 无法打开包括文件:“mex.h”: No such file or directory 
+</code></pre></div>
+<p>AddVectors.cu </p>
+
+<p>可以通过将刚刚编写的<strong>AddVectors.cu</strong>文件中的#include “mex.h”添加路径指向：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">#include &quot;D:\Program Files\MATLAB\R2012b\extern\include\mex.h&quot;
+</code></pre></div>
+<p>期间还遇到过无法打开“tmwtypes.h”的错误:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"> fatal error C1083: 无法打开包括文件:“tmwtypes.h”: No such file or directory 
+</code></pre></div>
+<p>最终参考<a href="http://www.muzichao.com/matlab-cuda-2/">木子超同学的博文</a>，将#include <tmwtypes.h>改为#include &quot;tmwtypes.h&quot;后通过编译：</p>
+
+    </div>
+    <hr>
+    <div id="disqus_thread">
+  <button type="button" name="suyan-zh" class="btn btn-default show-commend">显示评论</button>
+</div>
+
+  </div>
+  <!-- 目录 -->
+  <div id="content_table" style="position:fixed;right:20px;top:120px;display:none;">
+    <div class="panel panel-success">
+      <div class="panel-body" id="nav"></div>
+    </div>
+  </div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="position:fixed;right:20px;top:10px;">
+  <button id="nav_btn" class="btn btn-lg" style="height:45px;width:45px;"><i class="fa fa-angle-left"></i></button>
+</div>
+<div style="position:fixed;right:20px;top:60px;">
+  <button id="content_btn" class="btn btn-lg" style="height:45px;width:45px;"><i class="fa fa-angle-down"></i></button>
+</div>
+<script type="text/javascript" src="/public/js/jquery.js"></script>
+<script type="text/javascript" src="/public/js/bootstrap.js"></script>
+<script src="/public/js/jquery.pjax.js"></script>
+<script src="/public/js/prettify/prettify.js"></script>
+<script>
+    $('a[href="#技术"]').tab('show');
+</script>
+<script src="/public/js/base.js"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-43667383-1', 'yansu.org');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

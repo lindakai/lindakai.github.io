@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+<title>CV-QKD的安全距离 | 林大凯的博客</title>
+<meta name="author" content="林大凯">
+
+
+<link rel="shortcut icon" href="/public/upload/gavatar/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/public/css/bootstrap.css">
+<link rel="stylesheet" href="/public/css/font-awesome.css">
+<link rel="stylesheet" href="/public/js/prettify/prettify.css">
+<link rel="stylesheet" href="/public/css/base.css">
+<link href="/pages/atom.xml" rel="alternate" title="林大凯的博客" type="application/atom+xml">
+</head>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 aside visible-md visible-lg">
+  <div class="row">
+    <div class="col-md-3 col-xs-3 aside1">
+      <br>
+      <a class="pjaxlink" href="/"><img src="/public/upload/gavatar/gavatar.png" class="img-rounded avatar"></a>
+      <br><br>
+      <ul class="nav nav-pills nav-stacked">
+        
+          <li><a href="#读书" data-toggle="tab">读书</a></li>
+        
+          <li><a href="#技术" data-toggle="tab">技术</a></li>
+        
+          <li><a href="#生活" data-toggle="tab">生活</a></li>
+        
+        <li><a href="#tags" data-toggle="tab">标签</a></li>
+        <li><a class="pjaxlink" href="/pages/about.html">关于</a></li>
+      </ul>
+      <div class="aside1_bottom">
+        <table class="table table-condensed">
+          <tr>
+            <td><a href="/pages/atom.xml" target="_blank"><i class="fa fa-rss fa-2x"></i></a></td>
+            <td><a href="mailto:sjtuldk@gmail.com"><i class="fa fa-envelope-o fa-2x"></i></a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-9 col-xs-9 aside2">
+      <div class="row">
+        <div class="tab-content">
+           
+            <div class="tab-pane" id="读书">
+              <div class="list-group">
+                <h2 class="center">读书</h2>
+                
+                  <a href="/2014/03/14/book-list-of-2014.html" class="list-group-item pjaxlink">2014阅读书单</a>
+                
+                  <a href="/2013/12/20/book-list-of-2013.html" class="list-group-item pjaxlink">2013阅读书单</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="技术">
+              <div class="list-group">
+                <h2 class="center">技术</h2>
+                
+                  <a href="/2014/08/18/CUDA-several-functions.html" class="list-group-item pjaxlink">CUDA C 中的几个常用函数</a>
+                
+                  <a href="/2014/07/21/Large-signal-parameters.html" class="list-group-item pjaxlink">大信号放大--运放的关键参数</a>
+                
+                  <a href="/2014/07/21/Large-signal-parameters.html" class="list-group-item pjaxlink">大信号放大--运放的关键参数</a>
+                
+                  <a href="/2014/07/18/Load-sharing.html" class="list-group-item pjaxlink">CV-QKD的安全距离</a>
+                
+                  <a href="/2014/07/18/Layered-LDPC.html" class="list-group-item pjaxlink">分层LDPC译码算法</a>
+                
+                  <a href="/2014/07/13/Matlab-speedup.html" class="list-group-item pjaxlink">通用Matlab加速方法</a>
+                
+                  <a href="/2014/07/13/Matlab-CUDA2.html" class="list-group-item pjaxlink">Matlab中的CUDA环境配置小记</a>
+                
+                  <a href="/2014/07/12/CVQKD.html" class="list-group-item pjaxlink">CV-QKD的安全距离</a>
+                
+                  <a href="/2014/07/12/CV-QKD-Distance.html" class="list-group-item pjaxlink">CV-QKD的安全距离</a>
+                
+                  <a href="/2014/06/19/LDPC-Beta.html" class="list-group-item pjaxlink">关于LDPC码和量子协商效率</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="生活">
+              <div class="list-group">
+                <h2 class="center">生活</h2>
+                
+                  <a href="/2014/06/19/dandelion.html" class="list-group-item pjaxlink">错误设计的蒲公英</a>
+                
+              </div>
+            </div>
+          
+          <div class="tab-pane" id="tags">
+            <div class="panel-group" id="accordion">
+              <h2 class="center">标签</h2>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#LDPC">LDPC</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="LDPC" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/07/18/Layered-LDPC.html' class="list-group-item pjaxlink">
+                        分层LDPC译码算法
+                      </a>
+                    
+                      <a  href='/2014/06/19/LDPC-Beta.html' class="list-group-item pjaxlink">
+                        关于LDPC码和量子协商效率
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#CV-QKD">CV-QKD</a>
+                      <span class="badge pull-right">4</span>
+                    </h4>
+                  </div>
+                  <div id="CV-QKD" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/07/18/Load-sharing.html' class="list-group-item pjaxlink">
+                        CV-QKD的安全距离
+                      </a>
+                    
+                      <a  href='/2014/07/12/CVQKD.html' class="list-group-item pjaxlink">
+                        CV-QKD的安全距离
+                      </a>
+                    
+                      <a  href='/2014/07/12/CV-QKD-Distance.html' class="list-group-item pjaxlink">
+                        CV-QKD的安全距离
+                      </a>
+                    
+                      <a  href='/2014/06/19/LDPC-Beta.html' class="list-group-item pjaxlink">
+                        关于LDPC码和量子协商效率
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Life">Life</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Life" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/06/19/dandelion.html' class="list-group-item pjaxlink">
+                        错误设计的蒲公英
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Matlab">Matlab</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="Matlab" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/07/13/Matlab-speedup.html' class="list-group-item pjaxlink">
+                        通用Matlab加速方法
+                      </a>
+                    
+                      <a  href='/2014/07/13/Matlab-CUDA2.html' class="list-group-item pjaxlink">
+                        Matlab中的CUDA环境配置小记
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#CUDA">CUDA</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="CUDA" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/08/18/CUDA-several-functions.html' class="list-group-item pjaxlink">
+                        CUDA C 中的几个常用函数
+                      </a>
+                    
+                      <a  href='/2014/07/13/Matlab-CUDA2.html' class="list-group-item pjaxlink">
+                        Matlab中的CUDA环境配置小记
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#OP-Amp">OP-Amp</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="OP-Amp" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/07/21/Large-signal-parameters.html' class="list-group-item pjaxlink">
+                        大信号放大--运放的关键参数
+                      </a>
+                    
+                      <a  href='/2014/07/21/Large-signal-parameters.html' class="list-group-item pjaxlink">
+                        大信号放大--运放的关键参数
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12 aside3">
+        <div id="container">
+          <div id="pjax">
+            <div class="row">
+  <div class="col-md-12 aside3-title">
+    <br>
+    <h2 id="#identifier">CV-QKD的安全距离</h2>
+    2014年07月18日
+  </div>
+  <div class="col-md-12 aside3-content">
+    <hr>
+    <div id="content">
+      <h1>高频大信号放大解决方案：共享负载</h1>
+
+<h3>一、什么是“大信号”</h3>
+
+<p>对于±5V供电的运放，2Vpp即为大信号
+对于±15V供电的运放，5Vpp即为大信号
+然而，大信号的实际表现需要根据实际情况确定：
+    比如对于ADC驱动放大器，如低电压，±5V供电，全差分电压反馈放大器，则指定大信号带宽为2Vpp，因为2Vpp是通常情况下的ADC信号幅度。
+    另一方面，一个高电压正负28V电流反馈放大器(THS6204)，则大信号应用为4Vpp到20Vpp输出。
+实际上，输出电压摆幅对于信号带宽的限制作用大于50%。
+在大信号应用中，<strong>电压摆率</strong>对信号带宽的影响更大！</p>
+
+<h3>二、摆率、输出电压摆幅、输出电流</h3>
+
+<p>三者是大信号应用中的关键参数，尤其是需要输出信号的失真很小时。以下简要总结它们之间的关系：
+1. 摆率和大信号带宽直接相关。同时也与放大器的失真相关。从经验上讲，要支持一个80dBc(用来度量信号与载波功率之间的比值)的信号，则需要运放的摆率需要是能够支持该频率信号的摆率的20倍！
+2. 放大器输出电流带载(output current sourcing and sinking ability into the load)能力决定了输出电压的摆幅。负载电流越大则失真越严重。另外，高速大摆幅信号加载到容性负载上时需要快速地对电容充放电，对于这种容性负载，运放有限的带载能力所带来的不足可以等同于视为摆率的降低。
+3. 摆幅接近运放的双轨时输出同样会失真。</p>
+
+<h3>三、负载共享运放</h3>
+
+<p>一个实际应用：
+<img src="/public/upload/Load-sharing/f1.png" alt="interpreter pattern">
+    其中，两个运放的输出端均连接了100Ω的电阻，这样从GND看这两个电阻并联，并与50Ω的负载相匹配。
+    输出端的阻抗匹配嫩巩固使负载端的反射最小，也造成了6dB的负载端信号衰减。
+    输入端的匹配同样通过两个100Ω的电阻并联实现。
+    在实际应用中，即使不需要终端匹配和反向终端(back or double termination)，在两个运放的输出端放置一个电阻仍然是有必要的，它们能够使两个运放的输出电流达到平衡，防止反灌现象。</p>
+
+<h3>四、 输出直流偏置</h3>
+
+<p>共享负载的应用需要避免运放之间的电流传输，否则会给整个电路造成致命伤害！
+    同时，即使由于共享负载使得每个运放的输出电流减小了，但是输出电压摆幅的要求却始终没变！
+    造成输出不均衡的一个原因便是输出信号的直流偏置。计算公式可参照《tidu153.pdf—P4》。
+    虽然双运放封装的放大器相对于单运放封装的运放具有更好的匹配特性，但是由于共享电源的不相互独立的限制，导致双运放封装并不适合在应用在共享负载中。这是由于它们共用一根电源管脚，可能会导致相互之间的正反馈（positive feedback）并进而导致振荡。选择单运放封装的另一个原因是散热问题，单运放封装可以的每个运放可以承载更大的功率。
+<strong>ps:</strong>a double-terminated, 50 Ω cable：
+<img src="/public/upload/Load-sharing/f2.png" alt="interpreter pattern"></p>
+
+    </div>
+    <hr>
+    <div id="disqus_thread">
+  <button type="button" name="suyan-zh" class="btn btn-default show-commend">显示评论</button>
+</div>
+
+  </div>
+  <!-- 目录 -->
+  <div id="content_table" style="position:fixed;right:20px;top:120px;display:none;">
+    <div class="panel panel-success">
+      <div class="panel-body" id="nav"></div>
+    </div>
+  </div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="position:fixed;right:20px;top:10px;">
+  <button id="nav_btn" class="btn btn-lg" style="height:45px;width:45px;"><i class="fa fa-angle-left"></i></button>
+</div>
+<div style="position:fixed;right:20px;top:60px;">
+  <button id="content_btn" class="btn btn-lg" style="height:45px;width:45px;"><i class="fa fa-angle-down"></i></button>
+</div>
+<script type="text/javascript" src="/public/js/jquery.js"></script>
+<script type="text/javascript" src="/public/js/bootstrap.js"></script>
+<script src="/public/js/jquery.pjax.js"></script>
+<script src="/public/js/prettify/prettify.js"></script>
+<script>
+    $('a[href="#技术"]').tab('show');
+</script>
+<script src="/public/js/base.js"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-43667383-1', 'yansu.org');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
