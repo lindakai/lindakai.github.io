@@ -7,18 +7,7 @@ layout: base
     <h2 id="#identifier">{{ page.title }}</h2>
     {{ page.date | date:"%Y年%m月%d日" }}
   </div>
-  <div class="col-md-12 aside3-content">
-    <hr>
-    <div id="content">
-      {{ content }}
-    </div>
-  </div>
-  <!-- 目录 -->
-  <div id="content_table" style="position:fixed;right:20px;top:120px;display:none;">
-    <div class="panel panel-success">
-      <div class="panel-body" id="nav"></div>
-    </div>
-  </div>
+  
   <!-- 多说评论框 start -->
 		<div class="ds-thread" data-thread-key="{{ page.title }}" data-title="{{ page.title }}" data-url="{{ page.title }}"></div>
 	<!-- 多说评论框 end -->
@@ -35,5 +24,18 @@ layout: base
 		})();
 		</script>
 	<!-- 多说公共JS代码 end -->
+	
+  <div class="col-md-12 aside3-content">
+    <hr>
+    <div id="content">
+      {{ content }}
+    </div>
+  </div>
+  <!-- 目录 -->
+  <div id="content_table" style="position:fixed;right:20px;top:120px;display:none;">
+    <div class="panel panel-success">
+      <div class="panel-body" id="nav"></div>
+    </div>
+  </div>
 </div>
 
