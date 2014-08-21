@@ -19,8 +19,10 @@ layout: base
       <div class="panel-body" id="nav"></div>
     </div>
   </div>
-    <hr>
-    {% include disqus.html %}
+  //<p>"{{ site.disqus.shortname2 }}"</p>
+ // <p>"{{ site.title }}"</p>
+ //   <hr>
+ //   {% include disqus.html %}
   <div class="article-inner article-comment">
         {% include duoshuo.html %}
   </div>

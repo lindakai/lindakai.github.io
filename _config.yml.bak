@@ -27,7 +27,7 @@ ga:
 
 # disqus 设置
 disqus:
-  shortname: LDK
+  shortname: lindakai
 
 # 主题设置，自动激活某个标签
 active: 技术
