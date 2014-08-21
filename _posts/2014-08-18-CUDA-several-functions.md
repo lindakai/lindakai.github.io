@@ -2,7 +2,7 @@
 layout: post
 title:  "CUDA C 中的几个常用函数"
 category: 技术
-tags: CUDA
+tags: CUDA LDPC
 ---
 
 ###一、cudaMalloc()###
