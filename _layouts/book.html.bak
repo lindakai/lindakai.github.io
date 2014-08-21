@@ -52,9 +52,6 @@ layout: base
           </div>      
         </div>
       {% endfor %}
-    </div>
-    <hr>
-    {% include disqus.html %}
     <!-- 多说评论框 start -->
 			<div class="ds-thread" data-thread-key="{{ page.title }}" data-title="{{ page.title }}" data-url="{{ page.title }}"></div>
 		<!-- 多说评论框 end -->
@@ -71,6 +68,9 @@ layout: base
 			})();
 			</script>
 		<!-- 多说公共JS代码 end -->
+    </div>
+    <hr>
+    {% include disqus.html %}
   </div>
 </div>
 

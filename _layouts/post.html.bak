@@ -7,29 +7,13 @@ layout: base
     <h2 id="#identifier">{{ page.title }}</h2>
     {{ page.date | date:"%Y年%m月%d日" }}
   </div>
-  
-  <!-- 多说评论框 start -->
-		<div class="ds-thread" data-thread-key="{{ page.title }}" data-title="{{ page.title }}" data-url="{{ page.title }}"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"lindakai"};
-		(function() {
-			var ds = document.createElement('script');
-			ds.type = 'text/javascript';ds.async = true;
-			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-			ds.charset = 'UTF-8';
-			(document.getElementsByTagName('head')[0] 
-			 || document.getElementsByTagName('body')[0]).appendChild(ds);
-		})();
-		</script>
-	<!-- 多说公共JS代码 end -->
-	
   <div class="col-md-12 aside3-content">
     <hr>
     <div id="content">
       {{ content }}
     </div>
+    <hr>
+    {% include duoshuo.html %}
   </div>
   <!-- 目录 -->
   <div id="content_table" style="position:fixed;right:20px;top:120px;display:none;">
