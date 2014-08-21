@@ -12,3 +12,17 @@
     $('a[href="#{{ site.active }}"]').tab('show');
 </script>
 <script src="/public/js/base.js"></script>
+
+<!-- duoshuo js start -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"lugeek"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- duoshuo js end -->
