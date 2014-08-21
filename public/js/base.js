@@ -74,6 +74,7 @@ $(document).ready(function() {
   $('body').on('click', '.show-commend', function(){
     var ds_loaded = false;
     window.disqus_shortname = $('.show-commend').attr('name');
+    var disqus_shortname = 'lindakai';
     $.ajax({
       type: "GET",
       url: "http://lindakai.disqus.com/embed.js",
