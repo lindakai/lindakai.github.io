@@ -5,10 +5,10 @@ category: 技术
 tags: C
 ---
 
-### Socket
+## Socket
 使用Socket需要在“附加依赖项”中添加ws2_32.lib
 
-#### Socketaddr
+### Socketaddr
 In IPv4, **sockaddr** and **sockaddr_in** are used:
 ```c
 struct sockaddr {
@@ -25,7 +25,7 @@ struct sockaddr_in {
 ```
 
 
-#### Create a socket:
+### Create a socket:
 ```c
 SOCKET WSAAPI socket(
   _In_  int af,
@@ -40,7 +40,7 @@ type: The type of socket, type = **SOCK_STREAM** means TCP protocol is used.
 
 protocol: Not to specify a protocol with value "0"
 
-#### Bind a address with a socket
+### Bind a address with a socket
 ```c
 int bind(
   _In_  SOCKET s,
@@ -54,7 +54,7 @@ name [in]: A pointer to a sockaddr structure of the local address to assign to t
 
 namelen [in]: The length, in bytes, of the value pointed to by the name parameter.
 
-#### Listen an incoming connection
+### Listen an incoming connection
 ```c
 int listen(
   _In_  SOCKET s,
@@ -65,7 +65,7 @@ s [in]: A descriptor identifying a bound, unconnected socket.
 
 backlog [in]: The maximum length of the queue of pending connections. If set to SOMAXCONN, the underlying service provider responsible for socket s will set the backlog to a maximum reasonable value. There is no standard provision to obtain the actual backlog value.
 
-#### Permit an incoming connection
+### Permit an incoming connection
 ```c
 SOCKET accept(
   _In_     SOCKET s,
@@ -79,7 +79,7 @@ addr [out]: An optional pointer to a buffer that receives the address of the con
 
 addrlen [in, out]: An optional pointer to an integer that contains the length of structure pointed to by the addr parameter.
 
-#### Data sending
+### Data sending
 ```c
 int send(
   _In_  SOCKET s,
@@ -98,7 +98,7 @@ flags [in]: A set of flags that specify the way in which the call is made. This 
 
 **Remarks**:The successful completion of a send function does not indicate that the data was successfully delivered and received to the recipient. This function only indicates the data was successfully sent.
 
-####Close a socket
+###Close a socket
 ```c
 int closesocket(
   _In_  SOCKET s
@@ -107,8 +107,8 @@ int closesocket(
 **Remarks**: The closesocket function closes a socket. Use it to release the socket descriptor passed in the s parameter. **A Winsock client must never issue closesocket on s concurrently with another Winsock function call.**
 
 
-### Threads
-#### Create a thread
+## Threads
+### Create a thread
 ```c
 HANDLE WINAPI CreateThread(
   _In_opt_   LPSECURITY_ATTRIBUTES lpThreadAttributes,
@@ -134,7 +134,7 @@ A pointer to a variable to be passed to the thread.
 dwCreationFlags [in]:
 The flags that control the creation of the thread.
 
-#### Wait for threads in main
+### Wait for threads in main
 ```c
 DWORD WINAPI WaitForMultipleObjects(
   _In_  DWORD nCount,
