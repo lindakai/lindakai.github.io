@@ -1,0 +1,157 @@
+---
+layout: post
+title: "C双线程Socket小记"
+category: 技术
+tags: C
+---
+
+### Socket
+使用Socket需要在“附加依赖项”中添加ws2_32.lib
+
+#### Socketaddr
+In IPv4, **sockaddr** and **sockaddr_in** are used:
+```c
+struct sockaddr {
+        ushort  sa_family;
+        char    sa_data[14];
+};
+
+struct sockaddr_in {
+        short   sin_family;
+        u_short sin_port;
+        struct  in_addr sin_addr;
+        char    sin_zero[8];
+};
+```
+
+
+#### Create a socket:
+```c
+SOCKET WSAAPI socket(
+  _In_  int af,
+  _In_  int type,
+  _In_  int protocol
+);
+Eg: SOCKET sockrecv = socket(AF_INET,SOCK_STREAM,0);
+```
+af : Address family, use IPV4 when **af = AF_INET**
+
+type: The type of socket, type = **SOCK_STREAM** means TCP protocol is used.
+
+protocol: Not to specify a protocol with value "0"
+
+#### Bind a address with a socket
+```c
+int bind(
+  _In_  SOCKET s,
+  _In_  const struct sockaddr *name,
+  _In_  int namelen
+);
+```
+s [in]: A descriptor identifying an unbound socket.
+
+name [in]: A pointer to a sockaddr structure of the local address to assign to the bound socket .
+
+namelen [in]: The length, in bytes, of the value pointed to by the name parameter.
+
+#### Listen an incoming connection
+```c
+int listen(
+  _In_  SOCKET s,
+  _In_  int backlog
+);
+```
+s [in]: A descriptor identifying a bound, unconnected socket.
+
+backlog [in]: The maximum length of the queue of pending connections. If set to SOMAXCONN, the underlying service provider responsible for socket s will set the backlog to a maximum reasonable value. There is no standard provision to obtain the actual backlog value.
+
+#### Permit an incoming connection
+```c
+SOCKET accept(
+  _In_     SOCKET s,
+  _Out_    struct sockaddr *addr,
+  _Inout_  int *addrlen
+);
+```
+s [in]: A descriptor that identifies a socket that has been placed in a listening state with the listen function. The connection is actually made with the socket that is returned by accept.
+
+addr [out]: An optional pointer to a buffer that receives the address of the connecting entity, as known to the communications layer. The exact format of the addr parameter is determined by the address family that was established when the socket from the sockaddr structure was created.
+
+addrlen [in, out]: An optional pointer to an integer that contains the length of structure pointed to by the addr parameter.
+
+#### Data sending
+```c
+int send(
+  _In_  SOCKET s,
+  _In_  const char *buf,
+  _In_  int len,
+  _In_  int flags
+);
+```
+s [in]: A descriptor identifying a connected socket.
+
+buf [in]: A pointer to a buffer containing the data to be transmitted.
+
+len [in]: The length, in bytes, of the data in buffer pointed to by the buf parameter.
+
+flags [in]: A set of flags that specify the way in which the call is made. This parameter is constructed by using the bitwise OR operator with any of the following values.
+
+**Remarks**:The successful completion of a send function does not indicate that the data was successfully delivered and received to the recipient. This function only indicates the data was successfully sent.
+
+####Close a socket
+```c
+int closesocket(
+  _In_  SOCKET s
+);
+```
+**Remarks**: The closesocket function closes a socket. Use it to release the socket descriptor passed in the s parameter. **A Winsock client must never issue closesocket on s concurrently with another Winsock function call.**
+
+
+### Threads
+#### Create a thread
+```c
+HANDLE WINAPI CreateThread(
+  _In_opt_   LPSECURITY_ATTRIBUTES lpThreadAttributes,
+  _In_       SIZE_T dwStackSize,
+  _In_       LPTHREAD_START_ROUTINE lpStartAddress,
+  _In_opt_   LPVOID lpParameter,
+  _In_       DWORD dwCreationFlags,
+  _Out_opt_  LPDWORD lpThreadId
+);
+```
+lpThreadAttributes [in, optional]:
+A pointer to a SECURITY_ATTRIBUTES structure that determines whether the returned handle can be inherited by child processes. If lpThreadAttributes is NULL, the handle cannot be inherited.
+
+dwStackSize [in]:
+The initial size of the stack, in bytes. The system rounds this value to the nearest page. If this parameter is zero, the new thread uses the default size for the executable. For more information, see Thread Stack Size.
+
+lpStartAddress [in]:
+A pointer to the application-defined function to be executed by the thread. This pointer represents the starting address of the thread. For more information on the thread function, see ThreadProc.
+
+lpParameter [in, optional]:
+A pointer to a variable to be passed to the thread.
+
+dwCreationFlags [in]:
+The flags that control the creation of the thread.
+
+#### Wait for threads in main
+```c
+DWORD WINAPI WaitForMultipleObjects(
+  _In_  DWORD nCount,
+  _In_  const HANDLE *lpHandles,
+  _In_  BOOL bWaitAll,
+  _In_  DWORD dwMilliseconds
+);
+```
+nCount [in]: The number of object handles in the array pointed to by lpHandles. The maximum number of object handles is **MAXIMUM_WAIT_OBJECTS**. This parameter cannot be zero.
+
+
+lpHandles [in]: An array of object handles. For a list of the object types whose handles can be specified, see the following Remarks section. The array can contain handles to objects of different types. It may not contain multiple copies of the same handle.
+
+If one of these handles is closed while the wait is still pending, the function's behavior is undefined.
+
+The handles must have the **SYNCHRONIZE** access right. For more information, see Standard Access Rights.
+
+bWaitAll [in]:If this parameter is **TRUE**, the function returns when the state of all objects in the lpHandles array is signaled. If **FALSE**, the function returns when the state of any one of the objects is set to signaled. In the latter case, the return value indicates the object whose state caused the function to return.
+
+dwMilliseconds [in]: The time-out interval, in milliseconds. If a nonzero value is specified, the function waits until the specified objects are signaled or the interval elapses. If dwMilliseconds is zero, the function does not enter a wait state if the specified objects are not signaled; it always returns immediately. If dwMilliseconds is **INFINITE**, the function will return only when the specified objects are signaled.
