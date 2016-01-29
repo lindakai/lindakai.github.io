@@ -71,4 +71,5 @@ VFB和CFB更深入的比较可以参考Ref. 2
 ###补充资料：
 [1] Ramus, X. (2009). Making the most of a low-power, high-speed operational amplifier. Texas
 Instruments application report SBOA121.
+
 [2] Karki, J. (1998). Voltage feedback vs current feedback op amps. Texas Instruments application report SLVA051.
