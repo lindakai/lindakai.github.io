@@ -6,14 +6,14 @@ markdown: redcarpet
 author: 
   name: 林大凯
   email: sjtuldk@gmail.com
-  link: http://sjtuldk.tk
+  link: http://lindakai.cn
   weibo: http://weibo.com/u/1263334125
   github: http://github.com/lindakai
 
 # 站点信息
 title: 林大凯的博客 
 description: A ease place
-url: http://sjtuldk.tk
+url: http://lindakai.cn
 rss_url: /pages/atom.xml
 
 # gavatar头像及Favicon
