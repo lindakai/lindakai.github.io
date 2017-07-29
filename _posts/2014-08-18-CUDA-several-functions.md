@@ -5,13 +5,13 @@ category: 技术
 tags: CUDA LDPC
 ---
 
-###一、cudaMalloc()###
+### 一、cudaMalloc()
     cudaMalloc(void** devPtr,  size_t cout);
 devPtr: 在显存上分配数据的头指针
 
 cout: 分配空间的大小，以字节为单位。
    
-###二、cudaMemcpy()###
+### 二、cudaMemcpy()
     cudaMemcpy(void* dst,  
                const void* src,  
                size_t count, 
@@ -24,7 +24,7 @@ count: 拷贝数据的大小
 
 kind：拷贝数据的方向
    
-###三、cudaMallocPitch()###
+### 三、cudaMallocPitch()
     cudaMallocPitch(void** devPtr,  
                 size_t* pitch,  
                 size_t widthInBytes,  
@@ -39,7 +39,7 @@ height：分配矩阵的行数
 注意列空间的分配需要乘上元素的大小（eg. sizeof(float)）
 cudaMallocPitch()来分配global memory时，对行空间的申请回扩大到128个Bytes的整数倍。从而使每行的首地址与globla memory分段地址对齐，warp在访问的时候也就是对齐的了。
 
-###四、cudaMemcpy2D()###
+### 四、cudaMemcpy2D()
     cudaMemcpy2D(void* dst,
                     size_t dpitch,
                     const void* src,
@@ -62,7 +62,7 @@ height: src指向的2D数组的行数。
 
 kind：拷贝数据的方向
 
-###五、cudaMemset()###
+### 五、cudaMemset()
 
     cudaError_t cudaMemset (void * devPtr, 
                             int value, 
